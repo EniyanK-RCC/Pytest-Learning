@@ -5,8 +5,6 @@ from app import Calculator
 def calc():
     print("fixture scope is set to function by default")
     return Calculator()
-    yield
-    print("teardown code")
 
 
 def pytest_addoption(parser):
