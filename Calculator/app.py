@@ -12,7 +12,9 @@ class Calculator:
         prod = int(a)*int(b)
         return prod
     
-    def dif(self, a, b):
+    def div(self, a, b):
+        if b == 0:
+            raise ValueError("Value cannot be divided by zero")
         quot = int(a)/int(b)
         return quot
     
