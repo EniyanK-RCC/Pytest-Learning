@@ -1,11 +1,4 @@
 import pytest
-from app import Calculator
-
-@pytest.fixture(scope="module")
-def calc():
-    print("fixture scope is set to function by default")
-    return Calculator()
-
 
 def pytest_addoption(parser):
     parser.addoption("--num1", action="store", default=1, type=int, help="First number")
@@ -18,3 +11,9 @@ def num1(request):
 @pytest.fixture
 def num2(request):
     return request.config.getoption("--num2")
+
+@pytest.fixture(autouse=True, scope="function")
+def setup_and_teardown():
+    print("setup code running")
+    yield
+    print("teardown code running")
