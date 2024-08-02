@@ -8,5 +8,5 @@ def test_feature():
 @pytest.mark.other
 def test_other_feature(env):
     print("dev and prod")
-    assert env in ["dev", "staging", "prod"]
+    assert env in ["dev", "prod"]
 
